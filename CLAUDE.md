@@ -28,3 +28,17 @@ This project uses Conventional Commits:
 - Prefer simple solutions over clever ones
 - Flag anything that could cause a performance issue
 - Never use `any` in TypeScript
+
+## Rules Learned from FE-02
+
+1. Forms must use React Hook Form and Zod — never uncontrolled inputs.
+   Bad: `<input onChange={e => setState(e.target.value)} />`
+   Good: `const { register } = useForm(); <input {...register('name')} />`
+
+2. Email fields must enforce lowercase via Zod transform — never trust
+   raw user input.
+   Good: `email: z.string().email().transform(val => val.toLowerCase())`
+
+3. Test files go in `__tests__/` at the project root — never inside
+   component folders. A test file inside `components/` will be treated
+   as a component by the bundler.
