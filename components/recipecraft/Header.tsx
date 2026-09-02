@@ -124,6 +124,17 @@ export const Header: React.FC<HeaderProps> = ({ onSearch, initialQuery = '' }) =
           </Link>
 
           <Link
+            href="/playground"
+            className={`rounded-lg px-3 py-2 text-xs sm:text-sm font-medium transition ${
+              pathname === '/playground'
+                ? 'bg-amber-50 text-amber-700 font-semibold'
+                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+            }`}
+          >
+            A11y Playground
+          </Link>
+
+          <Link
             href="/settings-v2"
             className={`rounded-lg p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition ${
               pathname.includes('/settings') ? 'bg-gray-100 text-gray-700' : ''
