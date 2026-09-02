@@ -1,5 +1,6 @@
 'use client'
 
+import { Compass, Heart } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import GroceryList from '../../components/recipecraft/GroceryList'
@@ -75,14 +76,7 @@ export default function FavouritesPage() {
           {savedRecipes.length === 0 ? (
             <div className="my-12 flex flex-col items-center justify-center rounded-3xl border border-dashed border-gray-200 bg-white p-12 text-center shadow-xs">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-rose-50 text-rose-500 mb-3">
-                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  />
-                </svg>
+                <Heart className="h-8 w-8" />
               </div>
               <h3 className="text-lg font-bold text-gray-900">Your Recipe Box is empty</h3>
               <p className="mt-1 text-sm text-gray-500 max-w-sm">
@@ -92,7 +86,8 @@ export default function FavouritesPage() {
                 href="/"
                 className="mt-5 inline-flex items-center gap-2 rounded-xl bg-amber-600 px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-amber-600/20 hover:bg-amber-700 transition"
               >
-                Browse Recipes
+                <Compass className="h-4 w-4" />
+                <span>Browse Recipes</span>
               </Link>
             </div>
           ) : (

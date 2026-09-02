@@ -1,5 +1,6 @@
 'use client'
 
+import { AlertCircle, SearchX } from 'lucide-react'
 import React from 'react'
 import type { MealSummary } from '../../lib/types/meal'
 import RecipeCard from './RecipeCard'
@@ -26,9 +27,7 @@ export const RecipeGrid: React.FC<RecipeGridProps> = ({
     return (
       <div className="my-10 flex flex-col items-center justify-center rounded-2xl border border-rose-200 bg-rose-50/50 p-8 text-center">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-100 text-rose-600 mb-3">
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-          </svg>
+          <AlertCircle className="h-6 w-6" />
         </div>
         <h3 className="text-base font-bold text-gray-900">Oops! Failed to load recipes</h3>
         <p className="mt-1 text-sm text-gray-600 max-w-md">{error}</p>
@@ -75,9 +74,7 @@ export const RecipeGrid: React.FC<RecipeGridProps> = ({
     return (
       <div className="my-12 flex flex-col items-center justify-center rounded-3xl border border-dashed border-gray-200 p-12 text-center">
         <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-amber-600 mb-3">
-          <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+          <SearchX className="h-8 w-8" />
         </div>
         <h3 className="text-lg font-bold text-gray-900">No recipes matched your search</h3>
         <p className="mt-1 text-sm text-gray-500 max-w-sm">

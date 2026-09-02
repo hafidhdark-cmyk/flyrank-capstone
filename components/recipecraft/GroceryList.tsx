@@ -1,5 +1,6 @@
 'use client'
 
+import { Check, Copy, ShoppingBag, Trash2 } from 'lucide-react'
 import React from 'react'
 import type { GroceryItem } from '../../lib/types/meal'
 
@@ -26,14 +27,7 @@ export const GroceryList: React.FC<GroceryListProps> = ({
     return (
       <div className="my-10 flex flex-col items-center justify-center rounded-3xl border border-dashed border-gray-200 bg-white p-12 text-center shadow-xs">
         <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-amber-600 mb-3">
-          <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-            />
-          </svg>
+          <ShoppingBag className="h-8 w-8" />
         </div>
         <h3 className="text-lg font-bold text-gray-900">Your grocery list is empty</h3>
         <p className="mt-1 text-sm text-gray-500 max-w-sm">
@@ -84,21 +78,12 @@ export const GroceryList: React.FC<GroceryListProps> = ({
           >
             {copyFeedback ? (
               <>
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                </svg>
+                <Check className="h-4 w-4" />
                 <span>Copied to Clipboard!</span>
               </>
             ) : (
               <>
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
-                  />
-                </svg>
+                <Copy className="h-4 w-4" />
                 <span>Copy Checklist</span>
               </>
             )}
@@ -160,9 +145,7 @@ export const GroceryList: React.FC<GroceryListProps> = ({
                     className="text-gray-300 hover:text-rose-500 transition p-1"
                     title="Remove item"
                   >
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <Trash2 className="h-4 w-4" />
                   </button>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowRight, Heart } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -45,18 +46,9 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
             : 'bg-black/30 text-white hover:bg-black/50 hover:scale-105'
         }`}
       >
-        <svg
+        <Heart
           className={`h-4.5 w-4.5 transition-transform ${isSaved ? 'fill-current' : 'fill-none'}`}
-          stroke="currentColor"
-          strokeWidth={2}
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
+        />
       </button>
 
       {/* Content */}
@@ -88,12 +80,10 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
         <div className="mt-4 flex items-center justify-between border-t border-gray-100 pt-3">
           <Link
             href={`/recipe/${meal.idMeal}`}
-            className="inline-flex items-center gap-1 text-xs font-bold text-amber-600 hover:text-amber-700 transition"
+            className="inline-flex items-center gap-1 text-xs font-bold text-amber-600 hover:text-amber-700 transition group/btn"
           >
             <span>View Recipe</span>
-            <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-0.5" />
           </Link>
           <span className="text-[11px] font-medium text-gray-400">TheMealDB #{meal.idMeal}</span>
         </div>
