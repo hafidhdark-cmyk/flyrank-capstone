@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React from 'react'
 import type { IngredientItem } from '../../lib/types/meal'
 
@@ -109,12 +110,12 @@ export const IngredientsList: React.FC<IngredientsListProps> = ({
               />
 
               {/* Ingredient thumbnail */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={item.imageUrl}
                 alt={item.ingredient}
+                width={32}
+                height={32}
                 className="h-8 w-8 rounded-lg object-contain bg-white p-1 border border-gray-100 shrink-0"
-                loading="lazy"
               />
 
               <div className="flex flex-1 items-baseline justify-between gap-2 min-w-0">

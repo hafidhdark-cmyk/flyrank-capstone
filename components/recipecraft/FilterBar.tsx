@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React from 'react'
 import type { Category } from '../../lib/types/meal'
 
@@ -89,12 +90,12 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           >
             {/* Category thumbnail if available */}
             {cat.strCategoryThumb && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={cat.strCategoryThumb}
                 alt={cat.strCategory}
+                width={16}
+                height={16}
                 className="h-4 w-4 rounded-full object-cover"
-                loading="lazy"
               />
             )}
             <span>{cat.strCategory}</span>

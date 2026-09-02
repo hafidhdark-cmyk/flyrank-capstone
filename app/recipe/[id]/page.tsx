@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import React from 'react'
@@ -87,11 +88,13 @@ export default function RecipeDetailPage() {
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Photo */}
           <div className="relative aspect-4/3 md:aspect-auto w-full overflow-hidden bg-gray-100 min-h-[300px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={meal.strMealThumb}
               alt={meal.strMeal}
-              className="h-full w-full object-cover"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
             />
           </div>
 

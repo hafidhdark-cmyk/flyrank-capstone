@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import type { MealSummary } from '../../lib/types/meal'
@@ -19,12 +20,12 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-500/10">
       {/* Thumbnail Container */}
       <Link href={`/recipe/${meal.idMeal}`} className="relative aspect-4/3 w-full overflow-hidden bg-gray-100">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={meal.strMealThumb}
           alt={meal.strMeal}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </Link>
@@ -38,7 +39,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
           e.stopPropagation()
           onToggleSave(meal)
         }}
-        className={`absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full backdrop-blur-md transition-all active:scale-90 ${
+        className={`absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full backdrop-blur-md transition-all active:scale-90 ${
           isSaved
             ? 'bg-rose-500 text-white shadow-md shadow-rose-500/30 scale-105'
             : 'bg-black/30 text-white hover:bg-black/50 hover:scale-105'
