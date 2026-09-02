@@ -87,7 +87,11 @@ export async function getAreas(): Promise<string[]> {
     return []
   }
 
-  return data.meals.map((item) => item.strArea).filter(Boolean)
+  const rawAreas = data.meals
+    .map((item) => item.strArea?.trim())
+    .filter((area): area is string => Boolean(area && area.length > 0))
+
+  return Array.from(new Set(rawAreas)).sort()
 }
 
 /**

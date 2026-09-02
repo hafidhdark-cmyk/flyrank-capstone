@@ -54,7 +54,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-800 shadow-xs transition focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
           >
             <option value="All">All Cuisines 🌍</option>
-            {areas.map((area) => (
+            {Array.from(new Set(areas)).map((area) => (
               <option key={area} value={area}>
                 {area} Cuisine
               </option>
