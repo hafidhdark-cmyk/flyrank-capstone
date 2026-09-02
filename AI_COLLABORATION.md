@@ -69,6 +69,12 @@ if (
 
 ---
 
+### 🔍 Improvement 4: Design Polish with Lucide React Icons & Area Deduplication
+* **Manual Feedback**: Upgraded all raw inline SVG strings across components (`Header`, `RecipeCard`, `RecipeGrid`, `IngredientsList`, `GroceryList`, `app/recipe/[id]`, and `app/favourites`) to uniform, accessible icons using `lucide-react` (`ChefHat`, `Search`, `Heart`, `ShoppingBag`, `Check`, `Trash2`, `Video`, `Compass`, `Settings`).
+* **Backend Quirk Addressed**: Resolved duplicate keys in TheMealDB's `list.php?a=list` endpoint (which repeats `"Dominican"`, `"Channel Islander"`, and `"Congolese"`) by implementing a set-based deduplication and alphabetical sort in `mealService.ts` and `FilterBar.tsx`.
+
+---
+
 ## 3. Test Suite Verification
 All 14 unit tests pass with zero regressions:
 ```bash
