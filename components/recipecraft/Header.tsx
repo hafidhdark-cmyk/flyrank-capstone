@@ -1,6 +1,6 @@
 'use client'
 
-import { ChefHat, Heart, Search, Settings, X } from 'lucide-react'
+import { ChefHat, Heart, Search, Settings, Sparkles, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -121,6 +121,18 @@ export const Header: React.FC<HeaderProps> = ({ onSearch, initialQuery = '' }) =
                 {savedCount}
               </span>
             )}
+          </Link>
+
+          <Link
+            href="/chat"
+            className={`flex items-center gap-1 rounded-lg px-3 py-2 text-xs sm:text-sm font-medium transition ${
+              pathname === '/chat'
+                ? 'bg-amber-50 text-amber-700 font-semibold'
+                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+            }`}
+          >
+            <Sparkles className="h-3.5 w-3.5 text-amber-500" />
+            <span>ChefCraft AI</span>
           </Link>
 
           <Link
