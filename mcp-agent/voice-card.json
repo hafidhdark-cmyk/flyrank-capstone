@@ -1,0 +1,14 @@
+{
+  "voice": "FlyRank Build-in-Public Voice Card",
+  "tone": ["sharp", "grounded", "confident", "technical", "humble"],
+  "rules": [
+    "No marketing buzzwords (e.g. game-changing, revolutionary, synergy)",
+    "Always state the specific technical challenge or bug encountered",
+    "Quantify results where possible (time saved, lines changed, test count)",
+    "Include day counter or project milestone reference"
+  ],
+  "platformConstraints": {
+    "x_max_characters": 280,
+    "linkedin_max_characters": 3000
+  }
+}
